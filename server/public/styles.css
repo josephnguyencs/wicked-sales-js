@@ -10,3 +10,8 @@ img {
 .product {
   width: 33%;
 }
+
+.cart-container {
+  float: right;
+  display: flex;
+}

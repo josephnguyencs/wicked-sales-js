@@ -139,6 +139,37 @@ app.post('/api/cart', (req, res, next) => {
     });
 });
 
+app.post('/api/orders', (req, res, next) => {
+  const cartId = parseInt(req.session.cartId, 10);
+  const name = req.body.name;
+  const creditCard = req.body.creditCard;
+  const shippingAddress = req.body.shippingAddress;
+  if (!cartId) {
+    res.status(400).json({
+      error: 'no cart Id'
+    });
+  }
+  if (name && creditCard && shippingAddress) {
+    const sql = `
+    insert into "order" ("cartId", "name", "creditCard", "shippingAddress")
+    values ($1, $2, $3, $4)
+    returning "orderId", "createdAt", "name", "creditCard", "shippingAddress"
+    `;
+    const params = [cartId, name, creditCard, shippingAddress];
+    db.query(sql, params)
+      .then(result => {
+        const order = result.rows[0];
+        res.status(201).json(order);
+        delete req.session.cartId;
+      })
+      .catch(err => next(err));
+  } else {
+    res.status(500).json({
+      error: 'Missing a name, a creditCard, or a shippingAddress'
+    });
+  }
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });

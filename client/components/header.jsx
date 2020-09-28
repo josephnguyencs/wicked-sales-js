@@ -6,10 +6,12 @@ function Header(props) {
       <span className="navbar-brand">
         <i className="fa fa-dollar-sign" /> Wicked Sales
       </span>
-      <span className="cart-container">
+      <div className="cart-container" onClick={() => {
+        props.setView('cart-summary', {});
+      }}>
         <h6>{props.cartItemCount} items</h6>
         <i className="cart-icon fas fa-shopping-cart" />
-      </span>
+      </div>
     </div>
   );
 }

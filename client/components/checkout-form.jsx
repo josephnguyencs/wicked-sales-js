@@ -26,18 +26,24 @@ class CheckoutForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="checkout-form">
         <form onSubmit={this.handleSubmit}>
-          <label>Name</label>
-          <input name="name" value={this.state.name} onChange={this.handleChange}/>
-          <label>Credit Card</label>
-          <input name="creditCard" value={this.state.creditCard} onChange={this.handleChange}/>
-          <label>Shipping Address</label>
-          <input name="shippingAddress" value={this.state.shippingAddress} onChange={this.handleChange}/>
-          <button onClick={() => {
+          <div className="form-group">
+            <label>Name</label>
+            <input className="form-input form-control" name="name" value={this.state.name} onChange={this.handleChange}/>
+          </div>
+          <div className="form-group">
+            <label>Credit Card</label>
+            <input className="form-input form-control" name="creditCard" value={this.state.creditCard} onChange={this.handleChange}/>
+          </div>
+          <div className="form-group">
+            <label>Shipping Address</label>
+            <input className="form-input form-control" name="shippingAddress" value={this.state.shippingAddress} onChange={this.handleChange}/>
+          </div>
+          <button className="btn btn-danger" onClick={() => {
             this.props.setView('catalog', {});
           }}>Continue shopping</button>
-          <button>Place Order</button>
+          <button className="place-order-button btn btn-success">Place Order</button>
         </form>
       </div>
     );

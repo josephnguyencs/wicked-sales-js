@@ -14,6 +14,9 @@ function CartSummary(props) {
       }}>Back to catalog</h6>
       <h1>My Cart</h1>
       {items}
+      <button onClick={() => {
+        props.setView('checkout', {});
+      }}>Checkout</button>
     </div>
   );
 }

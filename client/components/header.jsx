@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header(props) {
   return (
-    <div>
+    <div className="header">
       <span className="navbar-brand">
         <i className="fa fa-dollar-sign" /> Wicked Sales
       </span>

@@ -7,7 +7,7 @@ function ProductListItem(props) {
     }}>
       <img src={props.item.image} />
       <h2>{props.item.name}</h2>
-      <h4>{props.item.price}</h4>
+      <h4>${(parseInt(props.item.price) / 100).toFixed(2)}</h4>
       <p>{props.item.shortDescription}</p>
     </div>
   );

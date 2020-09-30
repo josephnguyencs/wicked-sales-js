@@ -1,8 +1,3 @@
-img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover
-}
 .header{
   color: white;
   background-color: darkblue;
@@ -22,6 +17,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .cart-container {
@@ -47,17 +43,17 @@ img {
   display: flex;
   flex-direction: column;
   width: 68%;
+  margin-left: 20px;
 }
 
 .product-pic {
-  width: 30%;
+  width: 30vh;
   height: 30vh;
 }
 
 .back-to-catalog {
   width: 20%;
   margin-top: 20px;
-  margin-left: 20px;
   margin-bottom: 50px;
 }
 
@@ -89,4 +85,67 @@ img {
 
 .place-order-button {
   margin-left: 20px;
+}
+
+.cart-container {
+  margin-top: 2px;
+}
+
+.product-list-image {
+  margin-top: 10px;
+  height: 15vh;
+  width: 15vh;
+}
+
+.checkout {
+  float: right;
+  margin-right: 10%;
+  margin-bottom: 100px;
+}
+
+.coding-course {
+  margin-left: 5px;
+}
+
+@media (max-width: 375px) and (max-height: 667px) {
+  .font-small {
+    font-size: 15px;
+  }
+  .font-text {
+    font-size: 13px;
+  }
+
+  .back-to-catalog {
+    width: 20vh;
+    height: 10vh;
+  }
+
+  .add-to-cart {
+    width: 20vh;
+    height: 10vh;
+  }
+
+  .checkout {
+    float: none;
+    margin-left: 20px;
+  }
+
+  .total-price {
+    margin-left: 20px;
+  }
+
+  .phone-image {
+    height: 20vh;
+    width: 20vh;
+  }
+}
+
+@media (max-width: 667px) and (max-height: 375px) {
+  .font-small {
+    font-size: 15px;
+  }
+
+  .font-text {
+    font-size: 13px;
+  }
 }

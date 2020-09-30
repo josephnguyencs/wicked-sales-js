@@ -239,6 +239,89 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 58	8	4	999
 59	9	2	2595
 60	8	3	2900
+61	9	3	2900
+62	9	3	2900
+63	9	3	2900
+64	9	2	2595
+65	9	1	2999
+66	9	2	2595
+67	9	2	2595
+68	9	2	2595
+69	9	2	2595
+70	10	6	830
+71	10	2	2595
+72	10	2	2595
+73	10	2	2595
+74	10	1	2999
+75	10	2	2595
+76	10	2	2595
+77	10	1	2999
+78	10	2	2595
+79	10	1	2999
+80	10	2	2595
+81	10	2	2595
+82	10	2	2595
+83	10	2	2595
+84	10	2	2595
+85	10	2	2595
+86	10	2	2595
+87	10	1	2999
+88	10	2	2595
+89	10	2	2595
+90	10	1	2999
+91	10	2	2595
+92	10	1	2999
+93	10	2	2595
+94	10	1	2999
+95	10	2	2595
+96	10	2	2595
+97	10	2	2595
+98	10	6	830
+99	10	3	2900
+100	10	1	2999
+101	10	1	2999
+102	10	3	2900
+103	10	2	2595
+104	10	2	2595
+105	10	2	2595
+106	10	1	2999
+107	10	2	2595
+108	10	3	2900
+109	10	2	2595
+110	10	1	2999
+111	10	2	2595
+112	10	3	2900
+113	10	3	2900
+114	10	2	2595
+115	10	3	2900
+116	10	2	2595
+117	10	2	2595
+118	10	2	2595
+119	10	2	2595
+120	10	5	9900
+121	10	3	2900
+122	10	2	750
+123	10	3	2099
+124	10	3	2099
+125	10	6	2999
+126	10	2	750
+127	10	1	1000
+128	10	3	2099
+129	10	2	750
+130	10	3	2099
+131	10	5	2450
+132	10	2	750
+133	10	1	1000
+134	10	3	2099
+135	10	2	750
+136	10	6	2999
+137	10	6	2999
+138	10	2	750
+139	10	1	1000
+140	10	1	1000
+141	10	2	750
+142	10	3	2099
+143	10	3	2099
 \.
 
 
@@ -248,6 +331,7 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 
 COPY public.carts ("cartId", "createdAt") FROM stdin;
 9	2020-09-28 22:42:39.92766+00
+10	2020-09-29 17:26:43.471596+00
 \.
 
 
@@ -267,6 +351,11 @@ COPY public."order" ("orderId", "cartId", name, "creditCard", "shippingAddress",
 16	8	Joseph	129103	234234 test	2020-09-28 23:42:41.847227+00
 17	8	Joseph	129103	234234 test	2020-09-28 23:43:59.240502+00
 18	8	Joseph	129103	234234 test	2020-09-28 23:45:42.896084+00
+19	9	Joseph Nguyen	5235	234 asd	2020-09-29 00:20:33.561543+00
+20	9	Joseph Nguyen	5235	234 asd	2020-09-29 00:21:01.9969+00
+21	9	Demonstration	999999	LFZ Place	2020-09-29 00:21:44.167899+00
+22	10	Joseph Nguyen	5235	234 asd	2020-09-29 18:03:27.194176+00
+23	10	Joseph Nguyen	5235	234 asd	2020-09-29 22:07:46.272186+00
 \.
 
 
@@ -275,12 +364,12 @@ COPY public."order" ("orderId", "cartId", name, "creditCard", "shippingAddress",
 --
 
 COPY public.products ("productId", name, price, image, "shortDescription", "longDescription") FROM stdin;
-1	Shake Weight	2999	/images/shake-weight.jpg	Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-2	ShamWow	2595	/images/shamwow.jpg	It's like a chamois, towel, and sponge, all in one! Soaks up to 10x it's weight in any liquid!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-3	Snuggie	2900	/images/snuggie.jpg	Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-4	Wax Vac	999	/images/wax-vac.jpg	Gentle way to remove ear wax. Safe and hygienic. Reduces the risk of painful infections.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-5	Ostrich Pillow	9900	/images/ostrich-pillow.jpg	Create your own snugly space in the world and feel-good anywhere with the ultimate cocoon pillow.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-6	Tater Mitts	830	/images/tater-mitts.jpg	8 Seconds is all you need with Tater Mitts. Quickly and easily prepare all your favorite potato dishes with Tater Mitts.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
+1	HTML	1000	/images/html-icon.png	A basic language that displays the skeleton of a website.	This language allows you to build the skeleton of a website. For example, any hard coded values that never change on a website can be coded in HTML. HTML is often used with CSS and JavaScript in order to create beautiful websites.
+2	CSS	750	/images/css-icon.png	A basic language that is used to design the display of a website	This language allows you to style a website however you want and create amazing colorful websites. CSS is often used with HTML and JavaScript in order to build creative and dynamic websites.
+3	JavaScript	2099	/images/javascript-icon.jpg	A basic language that is used to create dynamic websites	This language allows you to create dynamic websites that change the display based on the user input. This language is the core functionality of non-static websites and is often used with HTML and CSS to create fluid and dynamic websites.
+4	Python	3499	/images/python-icon.png	A popular language that has many different uses and can be applied in many situations.	This backend language can be used for all kinds of scenarios in programming. It can be used to create beautiful applications and programs. Python is one of the most popular languages in the world and it is highly encouraged to try and learn this language.
+5	React.js	2450	/images/react-icon.png	A popular framework in JavaScript that is used very often in order to create dynamic frontend websites.	This framework is used in order to help speed up the process of building wonderful websites using HTML, CSS, and JavaScript. This framework is very common and will be a very helpful resource if you have experience using this technology.
+6	Node.js	2999	/images/node-icon.png	A backend JavaScript runtime environment that is able to execute JavaScript code outside of the web browser.	This technology allows you to use JavaScript without running it in the browser. This is very helpful in creating some websites as well as using back-end APIS.
 \.
 
 
@@ -288,21 +377,21 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 60, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 143, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 9, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 10, true);
 
 
 --
 -- Name: order_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."order_orderId_seq"', 18, true);
+SELECT pg_catalog.setval('public."order_orderId_seq"', 23, true);
 
 
 --

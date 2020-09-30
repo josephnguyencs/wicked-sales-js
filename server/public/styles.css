@@ -20,9 +20,19 @@
   margin-bottom: 20px;
 }
 
+.product:hover {
+  background-color: grey;
+}
+
 .cart-container {
   float: right;
   display: flex;
+  height: 38px;
+  width: 100px;
+}
+
+.cart-container:hover {
+  background-color: grey;
 }
 
 .product-details {

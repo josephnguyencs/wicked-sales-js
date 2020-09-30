@@ -28,6 +28,7 @@ class CheckoutForm extends React.Component {
     return (
       <div className="checkout-form">
         <form onSubmit={this.handleSubmit}>
+          <h1>DO NOT PUT IN REAL INFORMATION, THIS IS A DEMO</h1>
           <div className="form-group">
             <label>Name</label>
             <input className="form-input form-control" name="name" value={this.state.name} onChange={this.handleChange}/>

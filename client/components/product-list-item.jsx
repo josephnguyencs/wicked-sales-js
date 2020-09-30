@@ -5,10 +5,10 @@ function ProductListItem(props) {
     <div key={props.item.productId} className="product" onClick={() => {
       props.setView('details', props.item.productId);
     }}>
-      <img src={props.item.image} />
-      <h2>{props.item.name}</h2>
-      <h4>${(parseInt(props.item.price) / 100).toFixed(2)}</h4>
-      <p>{props.item.shortDescription}</p>
+      <img className="product-list-image" src={props.item.image} />
+      <h2 className="font-small">{props.item.name}</h2>
+      <h2 className="font-text">${(parseInt(props.item.price) / 100).toFixed(2)}</h2>
+      <h4 className="font-text">{props.item.shortDescription}</h4>
     </div>
   );
 

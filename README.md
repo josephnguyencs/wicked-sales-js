@@ -23,4 +23,4 @@ Try the application live at ws.joseph-cs.com
 * All user data is inserted and saved through a database
 
 ## Preview
-![alt text](server/public/images/wicked-sales-gif.mp4)
+![alt text](server/public/images/wicked-sales-gif.gif)

@@ -33,7 +33,9 @@ class ProductDetails extends React.Component {
               }}>Add to Cart</button>
             </div>
           </div>
-          <h4 className="font-text">{this.state.product.longDescription}</h4>
+          <div className="phone-margin">
+            <h4 className="font-text">{this.state.product.longDescription}</h4>
+          </div>
         </div>
       );
     } else {

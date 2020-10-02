@@ -164,7 +164,7 @@ app.post('/api/orders', (req, res, next) => {
       })
       .catch(err => next(err));
   } else {
-    res.status(500).json({
+    res.status(422).json({
       error: 'Missing a name, a creditCard, or a shippingAddress'
     });
   }

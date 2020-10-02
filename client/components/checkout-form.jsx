@@ -20,8 +20,12 @@ class CheckoutForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const order = this.state;
-    this.props.placeOrder(order);
+    if (this.state.name && this.state.creditCard && this.state.shippingAddress) {
+      const order = this.state;
+      this.props.placeOrder(order);
+    } else {
+      return null;
+    }
   }
 
   render() {
